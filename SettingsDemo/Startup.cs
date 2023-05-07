@@ -36,6 +36,7 @@ namespace SettingsDemo
         {
             services.Configure<SiteSettings>(Configuration);
 			services.AddMvc();
+            services.AddControllers(options => options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
