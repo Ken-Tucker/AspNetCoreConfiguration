@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using SettingsDemo.Models;
+using System.Diagnostics;
 
 namespace SettingsDemo.Controllers
 {
     public class HomeController : Controller
     {
-		private SiteSettings siteSettings;
+        private SiteSettings siteSettings;
 
-		public HomeController(IOptions<SiteSettings> settings)
+        public HomeController(IOptions<SiteSettings> settings)
         {
             siteSettings = settings.Value;
-            
+
         }
         public IActionResult Index()
         {
@@ -32,8 +28,8 @@ namespace SettingsDemo.Controllers
 
         public IActionResult Contact()
         {
-			ViewData["Message"] = $"Your contact page. {siteSettings.Title}";
-            
+            ViewData["Message"] = $"Your contact page. {siteSettings.Title}";
+
             return View();
         }
 
