@@ -7,16 +7,17 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using SettingsDemo.Models;
 
 namespace SettingsDemo
 {
     public class Startup
     {
-		private readonly IHostingEnvironment hostingEnvironment;
+		private readonly IWebHostEnvironment hostingEnvironment;
 
 
-		public Startup(IHostingEnvironment env, IConfiguration config)
+		public Startup(IWebHostEnvironment env, IConfiguration config)
         {
 			var builder = new ConfigurationBuilder()
                .SetBasePath(env.ContentRootPath)
@@ -40,7 +41,7 @@ namespace SettingsDemo
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
