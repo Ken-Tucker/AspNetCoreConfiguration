@@ -1,5 +1,5 @@
 # AspNetCoreConfiguration
-In this sample I will show you how to access the site settings in an asp.net core 2.0 website.  I am using Visual Studio for the Mac to doing the coding but it should work the same in the windows version of Visual Studio.
+In this sample I will show you how to access the site settings in an asp.net 10.0 website.  I am using Visual Studio 2026 to do the coding but it should work the same in Visual Studio Code.
 
 Configuration values are store in the file appsettings.json.   It is a json based configuration file.  An example file could look something like this.
 
